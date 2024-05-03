@@ -2,7 +2,7 @@
 # This script prints time for 12 hours
 
 hours=0
-min=0
+min=1
 
 while [ $hours -lt 13 ]; do
 	echo "Hour: $hours"
@@ -10,6 +10,6 @@ while [ $hours -lt 13 ]; do
 		echo $min
 		((min++))
 	done
-	min=0
+	min=1
 	((hours++))
 done
