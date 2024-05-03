@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# This script prints time for 12 hours
+
+hours=0
+min=0
+
+while [ $hours -lt 13 ]; do
+	echo "Hour: $hours"
+	while [ $min -lt 60 ]; do
+		echo $min
+		((min++))
+	done
+	min=0
+	((hours++))
+done
