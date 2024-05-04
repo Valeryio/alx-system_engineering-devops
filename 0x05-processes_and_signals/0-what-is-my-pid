@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# It prints the pid of the prog
+
+echo $$
