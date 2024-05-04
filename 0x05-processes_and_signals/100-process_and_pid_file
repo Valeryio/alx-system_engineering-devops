@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # It prints a word for infinity
 
-echo "$(pgrep -f ./100-process_and_pid_file)" > "/var/run/myscript.pid"
+"$(pgrep -f ./100-process_and_pid_file)" > "/var/run/myscript.pid"
 
 trap "echo I hate the kill command; rm /var/run/myscript.pid" TERM
 trap "rm /var/run/myscript.pid" QUIT
