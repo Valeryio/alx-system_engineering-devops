@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This scrpit prints the process and its name if its bash
+
+pgrep bash
