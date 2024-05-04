@@ -2,6 +2,7 @@
 # It prints a word for infinity
 
 trap "echo I am invincible!!!" TERM
+trap "Killed" KILL
 while true; do
 	echo "To infinity and beyond"
 	sleep 2
