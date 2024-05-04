@@ -2,4 +2,4 @@
 # Kills a process
 
 id=$(pgrep -f 4-to_infinity_and_beyond)
-kill $id
+kill "$id"
