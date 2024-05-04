@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# It prints a word for infinity
+
+trap "echo I am invincible!!!" TERM
+while true; do
+	echo "To infinity and beyond"
+	sleep 2
+done
