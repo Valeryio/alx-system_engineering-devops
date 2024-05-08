@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# SHow attend ip addresses
+
+ip=$(ifconfig -a | grep netmask)
+
+for i in $ip; do
+	y=$(echo $i | grep -E '[0-9]*')
+	echo $y
+#	result=$(echo $i | cut -d ' ' -f 2)
+#	echo "$result"
+done

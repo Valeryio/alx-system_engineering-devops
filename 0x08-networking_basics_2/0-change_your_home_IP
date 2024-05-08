@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Change DNS resolvers
+cp /etc/hosts ~/hosts.new
+echo $'localhost\t127.0.0.2' >> ~/hosts.new
+echo $'facebook.com\t8.8.8.8' >> ~/hosts.new
+cp -f ~/hosts.new /etc/hosts
