@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# ping an adress
+ping "$1"
