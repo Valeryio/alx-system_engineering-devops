@@ -5,9 +5,3 @@ exec { 'install_flask':
   unless  => '/usr/bin/pip3 show Flask',
   require => Package['python3-pip'],
 }
-
-exec {
-  command => "pip3 show Flask",
-  path    => ['/usr/bin/', '/usr/local/bin']
-  require => Exec(install_flask)
-}
