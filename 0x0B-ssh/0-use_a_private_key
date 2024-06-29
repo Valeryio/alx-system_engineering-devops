@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-
-cat ~/.ssh/school | ssh ubuntu@100.26.216.0
+# This script connect me to my ubuntu server
+ssh -i ~/.ssh/school ubuntu@100.26.216.0
