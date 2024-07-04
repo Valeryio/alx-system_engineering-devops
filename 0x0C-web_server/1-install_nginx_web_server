@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Thid file configure an apache server
 
 apt-get install -y nginx
 sudo mkdir -p /var/www/html/

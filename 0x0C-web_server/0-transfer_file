@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# This file transfert a file by scp
 
 IP=$2
 USERNAME=$3
