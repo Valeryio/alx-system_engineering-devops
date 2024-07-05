@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # Thid file configure an apache server
 
+sudo su
 apt-get install -y nginx
-sudo mkdir -p /var/www/html/
+mkdir -p /var/www/html/
 echo "Hello World!" > /var/www/html/index.html
 service start nginx
