@@ -18,6 +18,6 @@ backend web-backend
    balance roundrobin
    server web1 100.26.216.30 check
    server web2 100.25.34.201 check
-" >> file
+" >> /etc/haproxy/haproxy.cfg
 
 service haproxy restart
