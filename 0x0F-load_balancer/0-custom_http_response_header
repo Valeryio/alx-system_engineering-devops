@@ -1,0 +1,30 @@
+#!/bin/bash
+# This script set a custom header to a Nginx server
+
+# Installing Nginx on the server
+sudo su
+apt-get install -y nginx
+
+# Creating a simple server response
+mkdir -p /var/www/html/
+echo "Hello world" > /var/www/html/index.html
+
+# Configuring the default server and adding a new header
+THE_HOSTNAME=$(hostname)
+printf %s "server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+
+	root /usr/share/nginx/html;
+
+	# Add index.php to the list if you are using PHP
+	index index.html index.htm index.nginx-debian.html;
+
+	server_name _;
+
+	location / {
+		try_files \$uri \$uri/ =404;
+		add_header  X-Served-By: $THE_HOSTNAME;
+	}
+
+}" > /etc/nginx/sites-available/default
