@@ -7,7 +7,7 @@ apt-get install -y nginx
 
 # Creating a simple server response
 mkdir -p /var/www/html/
-echo "Hello world" > /var/www/html/index.html
+echo "" > /var/www/html/index.html
 
 # Configuring the default server and adding a new header
 THE_HOSTNAME=$(hostname)
