@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # This script set a custom header to a Nginx server
 
 # Installing Nginx on the server
