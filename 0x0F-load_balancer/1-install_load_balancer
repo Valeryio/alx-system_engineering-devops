@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Install HAproxy and make a simple configuration on two different server
+
+sudo apt-get install haproxy -y
+
+
