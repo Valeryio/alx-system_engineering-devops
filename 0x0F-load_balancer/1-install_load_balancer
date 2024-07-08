@@ -1,6 +1,23 @@
 #!/usr/bin/env bash
 # Install HAproxy and make a simple configuration on two different server
 
+# Installing Haproxy
 sudo apt-get install haproxy -y
 
+# Backup the config file
+cat /etc/haproxy/haproxy.cfg > /etc/haproxy/haproxy.cfg.backup
 
+
+echo "
+frontend http
+  bind *:80
+  mode http
+  default_backend web-backend
+
+backend web-backend
+   balance roundrobin
+   server web1 100.26.216.30 check
+   server web2 100.25.34.201 check
+" >> file
+
+service haproxy restart
