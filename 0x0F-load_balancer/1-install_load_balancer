@@ -9,15 +9,15 @@ cat /etc/haproxy/haproxy.cfg > /etc/haproxy/haproxy.cfg.backup
 
 
 echo "
-frontend http
+frontend http-frontend
   bind *:80
   mode http
-  default_backend web-backend
+  default_backend http-backend
 
-backend web-backend
+backend http-backend
    balance roundrobin
-   server web1 100.26.216.30 check
-   server web2 100.25.34.201 check
+   server 429797-web-01 100.26.216.30 check
+   server 429797-web-02 100.25.34.201 check
 " >> /etc/haproxy/haproxy.cfg
 
 service haproxy restart
