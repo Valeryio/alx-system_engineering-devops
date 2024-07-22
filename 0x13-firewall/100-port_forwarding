@@ -1,0 +1,6 @@
+echo "net/ipv4/ip_forward=1" >> /etc/ufw/sysctl.conf
+echo "
+# Forward the traffic from 8080/TCP to 80/TCP
+*nat
+:PREROUTING ACCEPT [0:0]
+-A PREROUTING -p tcp --dport 8080 -j REDIRECT --to-port 80" >> /etc/ufw/before.rules
