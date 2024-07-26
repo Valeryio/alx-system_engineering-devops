@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
 
-sudo runuser $1 whoami
+if [[ $1 -eq "" ]]
+then
+	runuser -u "root" "whoami"
+else
+	runuser -u "$1" "whoami"
+fi

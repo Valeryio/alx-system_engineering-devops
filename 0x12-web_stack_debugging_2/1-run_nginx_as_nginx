@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+sudo adduser nginx
+sudo chown -R nginx:nginx /var/log/nginx
+sudo chown -R nginx:nginx /var/lib/nginx
+
+
