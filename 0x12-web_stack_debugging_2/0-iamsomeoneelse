@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-if [[ $1 -eq "" ]]
+# if [[ $1 -eq "" ]]
+if [[ -z $1 ]]
 then
 	runuser -u "root" "whoami"
 else
