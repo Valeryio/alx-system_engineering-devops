@@ -2,8 +2,8 @@
 # Run nginx as non root user
 
 sudo adduser nginx
-sudo chown -R nginx:nginx /var/log/nginx
-sudo chown -R nginx:nginx /var/lib/nginx
+sudo chown -R nginx:nginx "/var/log/nginx"
+sudo chown -R "nginx:nginx /var/lib/nginx"
 
 echo "
 user nginx;
