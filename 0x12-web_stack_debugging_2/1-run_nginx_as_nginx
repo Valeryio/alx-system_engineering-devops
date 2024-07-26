@@ -2,8 +2,8 @@
 # Run nginx as non root user
 
 sudo adduser nginx
-sudo chown -R nginx:nginx "/var/log/nginx"
-sudo chown -R "nginx:nginx /var/lib/nginx"
+sudo chown -R nginx:nginx /var/log/ngin
+sudo chown -R nginx:nginx /var/lib/nginx
 
 echo "
 user nginx;
@@ -90,4 +90,24 @@ http {
 #		proxy      on;
 #	}
 #} " > /etc/nginx/nginx.conf
+
+echo "
+server {
+	listen 8080 default_server;
+	listen [::]:8080 default_server;
+
+	root /usr/share/nginx/html;
+
+	# Add index.php to the list if you are using PHP
+	index index.html index.htm index.nginx-debian.html;
+
+	server_name _;
+
+	location / {
+		try_files $uri $uri/ =404;
+		add_header  X-Served-By localhost;
+	}
+
+}"> /etc/nginx/site-availables/default
+
 sudo systemctl restart nginx
