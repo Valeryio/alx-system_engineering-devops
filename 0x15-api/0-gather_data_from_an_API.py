@@ -7,31 +7,33 @@ import sys
     It shows some informations from the employes
 """
 
-employe_id = sys.argv[1]
-todo_url = "https://jsonplaceholder.typicode.com/users/{}/todos".\
-        format(employe_id)
-employe_url = f"https://jsonplaceholder.typicode.com/users/{employe_id}"
+if __name__ == "__main__":
 
-response = requests.get(todo_url)
-employe_response = requests.get(employe_url)
+    employe_id = sys.argv[1]
+    todo_url = "https://jsonplaceholder.typicode.com/users/{}/todos".\
+            format(employe_id)
+    employe_url = f"https://jsonplaceholder.typicode.com/users/{employe_id}"
 
-if employe_response.status_code == 200:
-    employe_name = employe_response.json().get("name")
+    response = requests.get(todo_url)
+    employe_response = requests.get(employe_url)
 
-if response.status_code == 200:
-    task_list = response.json()
+    if employe_response.status_code == 200:
+        employe_name = employe_response.json().get("name")
 
-    completed_tasks = []
-    uncompleted_tasks = []
+    if response.status_code == 200:
+        task_list = response.json()
 
-    for task in task_list:
-        if task.get("completed"):
-            completed_tasks.append(task)
-        else:
-            uncompleted_tasks.append(task)
+        completed_tasks = []
+        uncompleted_tasks = []
 
-    print(f"Employee {employe_name} is done with tasks\
-            ({len(completed_tasks)}/{len(task_list)}):")
+        for task in task_list:
+            if task.get("completed"):
+                completed_tasks.append(task)
+            else:
+                uncompleted_tasks.append(task)
 
-    for task in completed_tasks:
-        print(f"\t{task.get('title')}")
+        print(f"Employee {employe_name} is done with tasks\
+                ({len(completed_tasks)}/{len(task_list)}):")
+
+        for task in completed_tasks:
+            print(f"\t{task.get('title')}")
