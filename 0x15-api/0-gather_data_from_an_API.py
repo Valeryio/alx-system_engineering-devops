@@ -2,10 +2,12 @@
 
 import requests
 import sys
-"""Get informations of an employee from an api"""
+
+"""Get informations of an employee from an api
+    It shows some informations from the employes
+"""
 
 employe_id = sys.argv[1]
-
 todo_url = "https://jsonplaceholder.typicode.com/users/{}/todos".\
         format(employe_id)
 employe_url = f"https://jsonplaceholder.typicode.com/users/{employe_id}"
