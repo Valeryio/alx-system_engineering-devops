@@ -33,8 +33,10 @@ if __name__ == "__main__":
             else:
                 uncompleted_tasks.append(task)
 
+        print()
+
         print(f"Employee {employe_name} is done with tasks\
-                ({len(completed_tasks)}/{len(task_list)}):")
+({len(completed_tasks)}/{len(task_list)}):")
 
         for task in completed_tasks:
-            print(f"\t{task.get('title')}")
+            print(f"\t {task.get('title')}")
