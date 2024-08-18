@@ -4,9 +4,9 @@
     THis module export data to json
 """
 
-import sys
 import json
 import requests
+import sys
 
 
 if __name__ == "__main__":
