@@ -19,7 +19,7 @@ if __name__ == "__main__":
     employe_response = requests.get(employe_url)
 
     if employe_response.status_code == 200:
-        employe_name = employe_response.json().get("name")
+        employe_name = employe_response.json().get("username")
 
     if response.status_code == 200:
         task_list = response.json()
